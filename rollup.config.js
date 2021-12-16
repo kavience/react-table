@@ -17,7 +17,7 @@ export default {
     image(),
     postcss({
       minimize: true,
-      modules: true,
+      modules: false,
       use: {
         sass: null,
         stylus: null,
@@ -25,7 +25,6 @@ export default {
       },
       extract: true
     }),
-    // less(),
     babel({
       configFile: './babel.config.js',
       babelHelpers: 'runtime',
