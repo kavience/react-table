@@ -1,0 +1,14 @@
+@import './base.less';
+
+
+.generate-table-td-align(@direction) {
+    .@{prefix-cls}-td--@{direction} {
+        text-align: @direction;
+    }
+}
+
+.generate-table-td-align(~'left');
+
+.generate-table-td-align(~'right');
+
+.generate-table-td-align(~'center');

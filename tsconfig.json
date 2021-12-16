@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "lib": ["esnext", "dom"],
+    "target": "es5",
+    "allowSyntheticDefaultImports": true,
+    "jsx": "preserve",
+    "declaration": true,
+    "declarationDir": "./lib"
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
+}

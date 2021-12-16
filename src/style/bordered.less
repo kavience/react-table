@@ -1,0 +1,24 @@
+@import './base.less';
+
+.@{prefix-cls}.@{prefix-cls}--bordered {
+    border: @table-border;
+
+    .@{prefix-cls}-thead {
+        .@{prefix-cls}-tr {
+            &:first-child {
+                .@{prefix-cls}-td {
+                    border-top: @table-border;
+                }
+            }
+        }
+    }
+
+    .@{prefix-cls}-td {
+        border-right: @table-border;
+        border-bottom: @table-border;
+
+        &:last-child {
+            border-right: 0;
+        }
+    }
+}

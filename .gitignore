@@ -1,0 +1,8 @@
+node_modules
+.umi
+.umi-production
+yarn-error.log
+.DS_Store
+coverage/
+dist
+lib

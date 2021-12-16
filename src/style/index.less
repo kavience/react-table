@@ -1,0 +1,149 @@
+@import './base.less';
+@import './mixin.less';
+@import './size.less';
+@import './bordered.less';
+@import './dropdown.less';
+
+
+
+.@{prefix-cls} {
+    .@{prefix-cls}-header {
+        display: flex;
+        justify-content: space-between;
+
+        &-custom {
+            flex: 1;
+        }
+
+        &-actions {
+            min-width: 30px;
+            text-align: right;
+
+            &-setting {
+                display: inline-flex;
+                align-items: center;
+                border: 1px solid @border-color-gray;
+                border-radius: 2px;
+            }
+        }
+    }
+
+    .@{prefix-cls}-thead {
+        .@{prefix-cls}-tr {
+            .@{prefix-cls}-td {
+                position: relative;
+                background: @thead-bg-color;
+                font-weight: 500;
+            }
+        }
+
+
+        .@{prefix-cls}-column-sorter,
+        .@{prefix-cls}-column-filter {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+
+        .@{prefix-cls}-column-title {
+            flex: 1;
+        }
+
+        .@{prefix-cls}-thead-sorter,
+        .@{prefix-cls}-thead-filter {
+            cursor: pointer;
+            display: inline-block;
+            // width: 100px;
+
+            img {
+                display: block;
+            }
+        }
+
+        &-sorter {
+            display: flex;
+            flex-flow: column;
+        }
+    }
+
+    .@{prefix-cls}-body {
+        table-layout: fixed;
+        width: 100%;
+        border-spacing: 0;
+
+        .@{prefix-cls}-tr {
+            &:hover {
+                background: @table-tr-hover-color;
+            }
+        }
+
+        .@{prefix-cls}-td {
+            border-bottom: @table-border;
+        }
+
+        .@{prefix-cls}-td--ellipsis {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            word-break: keep-all;
+        }
+    }
+}
+
+.@{prefix-cls}-column-filter-overlay {
+    background-color: #ffffff;
+    padding: 8px;
+    text-align: right;
+    border: @table-border;
+    border-radius: 2px;
+
+    input {
+        width: 120px;
+        margin-bottom: 4px;
+        border: 1px solid @border-color-gray;
+        display: block;
+    }
+
+    button {
+        margin-left: 4px;
+    }
+}
+
+.@{prefix-cls}-column-config {
+    background-color: #ffffff;
+    border: @table-border;
+    border-radius: 2px;
+
+
+    &-list {
+        min-width: 200px;
+        padding: 0;
+        margin: 0;
+
+
+        .@{prefix-cls}-column-config-tip {
+            color: rgba(0, 0, 0, .5);
+        }
+
+        .@{prefix-cls}-column-config-item {
+            display: flex;
+            list-style: none;
+            align-items: center;
+
+            &-title {
+                flex: 1;
+            }
+
+            &-drag {
+                cursor: move;
+                display: flex;
+                margin-right: 4px;
+            }
+
+            &-title,
+            &-action {
+                display: inline-block;
+            }
+        }
+    }
+}

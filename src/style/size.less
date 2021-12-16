@@ -1,0 +1,169 @@
+@import './base.less';
+
+@padding-vertical-xs: 4px;
+@padding-vertical-sm: 6px;
+@padding-vertical-md: 8px;
+@padding-vertical-lg: 12px;
+
+@padding-horizontal-xs: 6px;
+@padding-horizontal-sm: 8px;
+@padding-horizontal-md: 12px;
+@padding-horizontal-lg: 16px;
+
+@font-size-xs: 12px;
+@font-size-sm: 14px;
+@font-size-md: 16px;
+@font-size-lg: 18px;
+
+.generate-table-size(@size, @padding-vertical, @padding-horizontal, @font-size) {
+    .@{prefix-cls}--@{size} {
+        font-size: @font-size;
+
+        .@{prefix-cls}-header,
+        .@{prefix-cls}-footer {
+            padding: @padding-vertical @padding-horizontal;
+        }
+
+        .@{prefix-cls}-header {
+            &-actions {
+                img {
+                    cursor: pointer;
+                    width: @font-size + 2px;
+                    height: @font-size + 2px;
+                    padding: @padding-vertical - 4px @padding-horizontal - 4px;
+                }
+            }
+        }
+
+        .@{prefix-cls}-thead-filter {
+            img {
+                width: @font-size + 2px;
+                height: @font-size + 2px;
+            }
+        }
+
+        .@{prefix-cls}-thead-sorter {
+            img {
+                width: @font-size - 4px;
+                height: @font-size - 4px;
+            }
+        }
+
+        .@{prefix-cls}-thead-sorter,
+        .@{prefix-cls}-thead-filter {
+            padding: 0 @font-size - 10px;
+        }
+
+        .@{prefix-cls}-thead>tr>th,
+        .@{prefix-cls}-tbody>tr>td {
+            padding: @padding-vertical @padding-horizontal;
+        }
+
+        .@{prefix-cls}-pagination {
+            padding: @padding-vertical @padding-horizontal;
+
+            &-item {
+                min-width: @font-size + 8px;
+                height: @font-size + 8px;
+
+                a {
+                    padding: 0 @padding-horizontal;
+                    font-size: @font-size;
+                    line-height: @font-size + 8px;
+                }
+            }
+
+            &-total-text {
+                margin-right: @padding-horizontal;
+            }
+
+            &-item,
+            &-jump-next,
+            &-jump-prev,
+            &-prev,
+            &-next {
+                margin-right: @padding-horizontal;
+            }
+
+            .rc-select-item {
+                padding: @padding-vertical @padding-horizontal;
+            }
+
+            .rc-select-selection-search-input {
+                height: @font-size + 8px;
+                line-height: @font-size + 8px;
+            }
+
+            &-options-quick-jumper>input {
+                height: @font-size + 2px;
+                line-height: @font-size + 2px;
+            }
+
+            .page-change-icon {
+                min-width: @font-size + 8px;
+                height: @font-size + 8px;
+                line-height: @font-size + 8px;
+            }
+        }
+    }
+
+    .@{prefix-cls}-column-config--@{size} {
+        padding: @padding-vertical + 4px @padding-horizontal - 2px;
+
+        .@{prefix-cls}-column-config-tip {
+            margin-bottom: @padding-vertical;
+        }
+
+        .@{prefix-cls}-column-config-item {
+            margin-bottom: @padding-vertical;
+
+            &-drag>img {
+                width: @font-size;
+                height: @font-size;
+            }
+
+            &-action {
+                min-width: @font-size + 20px;
+            }
+        }
+    }
+
+    .@{switch-prefix-cls}--@{size} {
+        width: @font-size * 2px;
+        height: @font-size + 2px;
+        line-height: @font-size;
+        border-radius: @font-size @font-size;
+
+        &:after {
+            width: @font-size;
+            height: @font-size;
+            left: 1px;
+            top: 0;
+        }
+
+        &.@{switch-prefix-cls}-checked {
+
+            .@{switch-prefix-cls}-inner {
+                left: 6px;
+            }
+
+            &:after {
+                left: @font-size - 2px;
+            }
+        }
+
+        &-label {
+            line-height: @font-size;
+            font-size: @font-size;
+            padding-left: 10px;
+        }
+    }
+}
+
+.generate-table-size(~'mini', @padding-vertical-xs, @padding-horizontal-xs, @font-size-xs);
+
+.generate-table-size(~'small', @padding-vertical-sm, @padding-horizontal-sm, @font-size-sm);
+
+.generate-table-size(~'middle', @padding-vertical-md, @padding-horizontal-md, @font-size-md);
+
+.generate-table-size(~'large', @padding-vertical-lg, @padding-horizontal-lg, @font-size-lg);
