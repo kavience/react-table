@@ -5,7 +5,7 @@ A react table UI component.
 
 ## Demo
 
-[View Demo](https://kavience.github.io/wc-input-number/)
+[View Demo](https://kavience.github.io/react-table/)
 
 
 ## Api
