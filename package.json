@@ -1,10 +1,16 @@
 {
   "name": "@kavience/react-table",
-  "version": "0.0.2",
-  "description": "a react table component",
+  "version": "0.0.3",
+  "description": "a react table component: https://kavience.github.io/react-table/",
   "author": "kavience",
   "main": "lib/index.js",
-  "keywords": ["react", "react-table", "rc-select", "rc-dropdown", "rc-switch"],
+  "keywords": [
+    "react",
+    "react-table",
+    "rc-select",
+    "rc-dropdown",
+    "rc-switch"
+  ],
   "scripts": {
     "prepare": "husky install && husky set .husky/pre-commit 'npm run lint' && husky add .husky/pre-commit 'npm run test'",
     "dev": "npm run update-demo && dumi dev",
@@ -19,7 +25,6 @@
     "registry": "https://registry.npmjs.org/"
   },
   "files": [
-    "dist/",
     "lib/",
     "types.d.ts",
     "README.md",
@@ -42,10 +47,7 @@
   },
   "dependencies": {
     "@types/lodash": "^4.14.178",
-    "@types/quill": "^2.0.9",
-    "classnames": "^2.3.1",
     "lodash": "^4.17.21",
-    "quill": "^1.3.7",
     "rc-checkbox": "^2.3.2",
     "rc-dropdown": "^3.2.0",
     "rc-pagination": "^3.1.14",
