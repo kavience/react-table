@@ -4,6 +4,7 @@ import Dropdown from 'rc-dropdown';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { PaginationProps } from 'rc-pagination';
+import WithResizable from './components/WithResizable';
 import Pagination from './components/Pagination';
 import { Column, ReactTableProps } from './interface';
 import FilterActiveSvg from './assets/filter-fill-active.svg';
@@ -23,6 +24,7 @@ const ReactTable = (props: ReactTableProps) => {
     pagination: basePagination,
     size = 'middle',
     dataSource,
+    resizable = true,
     onChange,
     bordered = false,
     rowKey = 'key',
@@ -120,6 +122,20 @@ const ReactTable = (props: ReactTableProps) => {
       [key]: undefined
     });
     setFilterVisibleKey(undefined);
+  };
+
+  const handleResize = (column: Column) => (e, { size: columSize }) => {
+    setColumns(
+      _.map(columns, itemColumn => {
+        if (column.key === itemColumn.key) {
+          return {
+            ...itemColumn,
+            width: columSize?.width
+          };
+        }
+        return itemColumn;
+      })
+    );
   };
 
   const handleDoFilter = (column: Column) => () => {
@@ -324,15 +340,28 @@ const ReactTable = (props: ReactTableProps) => {
         <tr className="react-table-tr">
           {_.map(columns, column => {
             if (!column.hidden) {
-              return (
+              let renderNode = (
                 <th
-                  key={column.key || column.dataIndex}
+                  key={column.key}
                   className={`react-table-td react-table-td--${column.align ||
-                    'left'}`}
+                    'left'} react-table-th--${column.key}`}
                 >
                   {renderTableTheadColumn(column)}
                 </th>
               );
+              if (resizable) {
+                renderNode = (
+                  <WithResizable
+                    width={column.width}
+                    key={column.key}
+                    columnKey={column.key}
+                    onResize={handleResize(column)}
+                  >
+                    {renderNode}
+                  </WithResizable>
+                );
+              }
+              return renderNode;
             }
           })}
         </tr>

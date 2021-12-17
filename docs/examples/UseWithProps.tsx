@@ -122,6 +122,7 @@ const UseWithProps = () => {
       <ReactTable
         {...tableProps}
         rowKey="id"
+        resizable
         columns={columns}
         dataSource={dataSource}
         onChange={handleTableChange}

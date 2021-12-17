@@ -54,7 +54,8 @@
     "rc-select": "^14.0.0-alpha.8",
     "rc-switch": "^3.2.2",
     "react-dnd": "^14.0.4",
-    "react-dnd-html5-backend": "^14.0.2"
+    "react-dnd-html5-backend": "^14.0.2",
+    "react-resizable": "^3.0.4"
   },
   "peerDependencies": {
     "react": "^16.8.0",
@@ -71,6 +72,7 @@
     "@rollup/plugin-typescript": "^8.2.1",
     "@types/enzyme": "^3.10.8",
     "@types/jest": "^26.0.23",
+    "@types/react-resizable": "^1.7.4",
     "@typescript-eslint/eslint-plugin": "^4.22.1",
     "@typescript-eslint/parser": "^4.22.1",
     "babel-jest": "^26.6.3",

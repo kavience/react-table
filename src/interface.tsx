@@ -1,5 +1,6 @@
 import { PaginationLocale, PaginationProps } from 'rc-pagination';
 import React from 'react';
+import { ResizeCallbackData } from 'react-resizable';
 
 export interface Column {
   dataIndex: any;
@@ -30,6 +31,7 @@ export interface ReactTableProps extends React.HTMLAttributes<any> {
   columns: Column[];
   dataSource?: any[];
   bordered?: boolean;
+  resizable?: boolean;
   loading?: boolean;
   rowKey?: string;
   size?: 'mini' | 'small' | 'middle' | 'large';
@@ -39,4 +41,14 @@ export interface ReactTableProps extends React.HTMLAttributes<any> {
   locale?: ReactTableLocal;
 
   onChange?: (pagination?: any, filters?: any, sorter?: any) => any;
+}
+
+export interface ResizeTableProps {
+  width: number | string;
+  columnKey: any;
+  children: any;
+  onResize: (
+    e: React.SyntheticEvent<Element, Event>,
+    data: ResizeCallbackData
+  ) => any;
 }
