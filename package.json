@@ -1,6 +1,6 @@
 {
   "name": "@kavience/react-table",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "a react table component: https://kavience.github.io/react-table/",
   "author": "kavience",
   "main": "lib/index.js",
